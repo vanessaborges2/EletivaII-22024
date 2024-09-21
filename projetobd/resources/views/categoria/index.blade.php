@@ -14,13 +14,15 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($categorias as $c)
             <tr>
-                <td>Sapato</td>
+                <td>{{ $c->nome }}</td>
                 <td>
-                    <a href="/categoria/1/edit" class="btn btn-warning">Alterar</a>
-                    <a href="/categoria/1" class="btn btn-danger">Excluir</a>
+                    <a href="/categoria/{{ $c->id }}/edit" class="btn btn-warning">Alterar</a>
+                    <a href="/categoria/{{ $c->id }}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </x-app-layout>
