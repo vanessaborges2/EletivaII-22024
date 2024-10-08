@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Categoria;
 
-class CategoriaController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categorias = Categoria::all();
-        return view("categoria.index", compact('categorias'));
+        //
     }
 
     /**
@@ -21,7 +19,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view("categoria.create");
+        //
     }
 
     /**
@@ -29,8 +27,7 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        Categoria::create($request->all());
-        return redirect("/categoria");
+        //
     }
 
     /**
@@ -38,8 +35,7 @@ class CategoriaController extends Controller
      */
     public function show(string $id)
     {
-        $categoria = Categoria::findOrFail($id);
-        return view("categoria.show", compact('categoria'));
+        //
     }
 
     /**
@@ -47,8 +43,7 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        $categoria = Categoria::findOrFail($id);
-        return view("categoria.edit", compact('categoria'));
+        //
     }
 
     /**
@@ -56,9 +51,7 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $categoria = Categoria::findOrFail($id);
-        $categoria->update($request->all());
-        return redirect("/categoria");
+        //
     }
 
     /**
@@ -66,8 +59,6 @@ class CategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        $categoria = Categoria::findOrFail($id);
-        $categoria->delete();
-        return redirect("/categoria");
+        //
     }
 }
