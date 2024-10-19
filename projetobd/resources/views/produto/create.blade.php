@@ -25,8 +25,10 @@
         <div class="row">
             <div class="col">
                 <label for="categoria_id" class="form-label">Categoria:</label>
-                <select name="categoria_id" class="form-control">
-                    
+                <select name="categoria_id" class="form-select">
+                    @foreach ($categorias as $categoria)
+                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>

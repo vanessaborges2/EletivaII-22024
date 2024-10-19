@@ -17,7 +17,18 @@
             </tr>
         </thead>
         <tbody>
-            
+            @foreach ($produtos as $produto)
+                <tr>
+                    <td>{{$produto->nome}}</td>
+                    <td>{{$produto->descricao}}</td>
+                    <td>{{$produto->valor}}</td>
+                    <td>{{$produto->categoria->nome}}</td>
+                    <td>
+                        <a href='/produto/{{$produto->id}}/edit' class="btn btn-warning">Alterar</a>
+                        <a href='/produto/{{$produto->id}}' class='btn btn-danger'>Excluir</a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 
