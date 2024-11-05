@@ -10,16 +10,14 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Produtos', 'Quantidade Vendida'],
-          ['Produto A',     11],
-          ['Produto B',      2],
-          ['Produto C',  2],
-          ['Produto D', 2],
-          ['Produto E',    7]
+          ['Categorias', 'Valor Médio dos Produtos por Categoria'],
+          @foreach($categorias as $index => $categoria)
+            ["{{$categoria}}" , {{$valores_medios[$index]}}]
+          @endforeach
         ]);
 
         var options = {
-          title: 'Quantidade de Produtos vendidos'
+          title: 'Análise de produtos por categoria'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
